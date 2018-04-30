@@ -9,7 +9,7 @@ using Xamarin.Forms.Platform.GTK;
 namespace SkiaForms.Gtk2
 {
 
-    public class SkiaViewRenderer : ViewRenderer<SkiaView, SKWidget>
+    public class SkiaViewRenderer : ViewRenderer<SkiaView, SkiaWidget>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<SkiaView> e)
         {
@@ -17,10 +17,8 @@ namespace SkiaForms.Gtk2
 
             if (e.NewElement != null && this.Control == null)
             {
-                var widget = new SKWidget()
+                var widget = new SkiaWidget()
                 {
-                    Name = "skiaView",
-                    Visible = true,
                     WidthRequest = 40,
                     HeightRequest = 40
                 };

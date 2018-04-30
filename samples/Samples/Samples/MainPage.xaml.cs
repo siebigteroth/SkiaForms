@@ -26,23 +26,23 @@ namespace Samples
                 HeightRequest = 40
             };
 
-            //skiaView.OnPaintSurface = (surface, imageInfo) =>
-            //{
-            //    var centerX = 20;
-            //    var centerY = 20;
+            skiaView.OnPaintSurface = (surface, imageInfo) =>
+            {
+                var centerX = 20;
+                var centerY = 20;
 
-            //    var canvas = surface.Canvas;
-            //    canvas.Clear();
+                var canvas = surface.Canvas;
+                canvas.Clear();
 
-            //    var fill = new SKPaint()
-            //    {
-            //        IsAntialias = true,
-            //        Style = SKPaintStyle.Fill,
-            //        Color = SKColor.Parse("#008000")
-            //    };
+                var fill = new SKPaint()
+                {
+                    IsAntialias = true,
+                    Style = SKPaintStyle.Fill,
+                    Color = SKColor.Parse("#008000")
+                };
 
-            //    canvas.DrawCircle(centerX, centerY, 20, fill);
-            //};
+                canvas.DrawCircle(centerX, centerY, 20, fill);
+            };
 
             this.layout.Children.Add(skiaView);
         }
