@@ -75,6 +75,14 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\SkiaForms.Gtk2\SkiaForms.Gtk2.csproj">
+      <Project>{b58afa56-caaf-4377-a85f-215ba36ed1aa}</Project>
+      <Name>SkiaForms.Gtk2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\SkiaForms\SkiaForms.csproj">
+      <Project>{b987d038-0f14-45fc-9538-d5a95cbf90f6}</Project>
+      <Name>SkiaForms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Samples\Samples\Samples.csproj">
       <Project>{866e3160-9944-4434-a82b-ac08d16cfe6a}</Project>
       <Name>Samples</Name>

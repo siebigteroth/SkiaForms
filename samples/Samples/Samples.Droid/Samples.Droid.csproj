@@ -80,6 +80,14 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\SkiaForms.Droid\SkiaForms.Droid.csproj">
+      <Project>{6e74314e-4325-4550-b3e3-68dcf3ae72fe}</Project>
+      <Name>SkiaForms.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\SkiaForms\SkiaForms.csproj">
+      <Project>{b987d038-0f14-45fc-9538-d5a95cbf90f6}</Project>
+      <Name>SkiaForms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samples\Samples.csproj">
       <Project>{4DB06625-3A19-4C13-8191-5CF249DE6B7A}</Project>
       <Name>Samples</Name>
