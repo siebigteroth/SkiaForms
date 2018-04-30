@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Taken from SkiaSharp https://github.com/mono/SkiaSharp/blob/master/source/SkiaSharp.Views/SkiaSharp.Views.Gtk/SKWidget.cs (3b1e7a0 on 24 Mar)
+
+using System;
 using System.ComponentModel;
 using SkiaSharp;
 using SkiaSharp.Views.Desktop;
