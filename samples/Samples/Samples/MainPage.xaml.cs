@@ -38,7 +38,7 @@ namespace Samples
                 {
                     IsAntialias = true,
                     Style = SKPaintStyle.Fill,
-                    Color = SKColor.Parse("#008000")
+                    Color = SKColor.Parse("#ff0000")
                 };
 
                 canvas.DrawCircle(centerX, centerY, 20, fill);

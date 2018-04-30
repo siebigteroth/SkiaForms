@@ -1,6 +1,4 @@
-﻿using Gdk;
-using SkiaForms;
-using SkiaSharp.Views.Gtk;
+﻿using SkiaForms;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.GTK;
 
@@ -8,7 +6,6 @@ using Xamarin.Forms.Platform.GTK;
 
 namespace SkiaForms.Gtk2
 {
-
     public class SkiaViewRenderer : ViewRenderer<SkiaView, SkiaWidget>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<SkiaView> e)
@@ -17,11 +14,7 @@ namespace SkiaForms.Gtk2
 
             if (e.NewElement != null && this.Control == null)
             {
-                var widget = new SkiaWidget()
-                {
-                    WidthRequest = 40,
-                    HeightRequest = 40
-                };
+                var widget = new SkiaWidget();
 
                 widget.PaintSurface += (s, a) => this.Element.OnPaintSurface?.Invoke(a.Surface, a.Info);
 
