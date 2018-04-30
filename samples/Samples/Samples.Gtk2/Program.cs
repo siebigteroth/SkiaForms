@@ -1,7 +1,9 @@
 ﻿using System;
+using SkiaForms.Gtk2;
+using SkiaSharp;
+using SkiaSharp.Views.Gtk;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.GTK;
-using Xamarin.Forms.Platform.GTK.Helpers;
 
 namespace Samples.Gtk2
 {
@@ -10,11 +12,13 @@ namespace Samples.Gtk2
         [STAThread]
         static void Main(string[] args)
         {
-            GtkThemes.Init();
-            if (PlatformHelper.GetGTKPlatform() == GTKPlatform.Windows)
+            var x = new Type[]
             {
-                GtkThemes.LoadCustomTheme("Themes/gtkrc-dark");
-            }
+                typeof(SkiaViewRenderer),
+                typeof(SKWidget),
+                typeof(SKSurface),
+                typeof(SkiaSharp.Views.Desktop.SKControl)
+            };
 
             Gtk.Application.Init();
             Forms.Init();
