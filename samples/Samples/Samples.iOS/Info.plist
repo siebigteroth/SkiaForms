@@ -24,8 +24,6 @@
 	<string>11.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Samples</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.Samples</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -50,5 +48,7 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>Samples</string>
+	<key>CFBundleIdentifier</key>
+	<string>me.siebigteroth.skiaforms-sample</string>
 </dict>
 </plist>

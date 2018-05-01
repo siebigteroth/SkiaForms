@@ -1,12 +1,11 @@
-﻿using System;
-using SkiaForms;
-using SkiaSharp.Views.iOS;
+﻿using SkiaForms;
+using SkiaSharp.Views.Mac;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
+using Xamarin.Forms.Platform.MacOS;
 
-[assembly: ExportRenderer(typeof(SkiaView), typeof(SkiaForms.iOS.SkiaViewRenderer))]
+[assembly: ExportRenderer(typeof(SkiaView), typeof(SkiaForms.macOS.SkiaViewRenderer))]
 
-namespace SkiaForms.iOS
+namespace SkiaForms.macOS
 {
     public class SkiaViewRenderer : ViewRenderer<SkiaView, SKCanvasView>
     {
@@ -19,15 +18,13 @@ namespace SkiaForms.iOS
                 if (this.Control == null)
                 {
                     var control = new SKCanvasView();
-                    control.Opaque = false;
                     control.PaintSurface += this.OnPaintSurface;
                     this.SetNativeControl(control);
-                    control.SetNeedsDisplay();
                 }
 
                 e.NewElement.Invalidated += this.OnInvalidated;
             }
-            else if(e.OldElement != null)
+            else if (e.OldElement != null)
             {
                 e.OldElement.Invalidated -= this.OnInvalidated;
                 if (this.Control != null)
@@ -42,9 +39,12 @@ namespace SkiaForms.iOS
             this.Element.OnPaintSurface?.Invoke(e.Surface, e.Info);
         }
 
-        private void OnInvalidated(object sender, EventArgs e)
+        private void OnInvalidated(object sender, System.EventArgs e)
         {
-            this.Control?.SetNeedsDisplay();
+            if (this.Control != null)
+            {
+                this.Control.NeedsDisplay = true;
+            }
         }
     }
 }

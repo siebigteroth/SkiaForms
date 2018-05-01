@@ -19,6 +19,8 @@ namespace Samples.Droid
 
             base.OnCreate(bundle);
 
+            SkiaForms.Android.Init.Include();
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new Samples.App());
         }

@@ -89,7 +89,7 @@
       <Name>SkiaForms</Name>
     </ProjectReference>
     <ProjectReference Include="..\Samples\Samples.csproj">
-      <Project>{4DB06625-3A19-4C13-8191-5CF249DE6B7A}</Project>
+      <Project>{866E3160-9944-4434-A82B-AC08D16CFE6A}</Project>
       <Name>Samples</Name>
     </ProjectReference>
   </ItemGroup>
