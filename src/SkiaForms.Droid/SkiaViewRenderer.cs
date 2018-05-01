@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SkiaForms.Droid
 {
-    public class SkiaViewRenderer
+    public class SkiaViewRenderer : ViewRenderer<SkiaView, SkiaWidget>
     {
     }
 }

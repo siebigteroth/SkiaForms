@@ -1,13 +1,14 @@
-﻿using SkiaForms;
-using SkiaSharp.Views.Desktop;
+﻿using System;
+using SkiaForms;
+using SkiaSharp.Views.iOS;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.GTK;
+using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(SkiaView), typeof(SkiaForms.Gtk2.SkiaViewRenderer))]
+[assembly: ExportRenderer(typeof(SkiaView), typeof(SkiaForms.iOS.SkiaViewRenderer))]
 
-namespace SkiaForms.Gtk2
+namespace SkiaForms.iOS
 {
-    public class SkiaViewRenderer : ViewRenderer<SkiaView, SkiaWidget>
+    public class SkiaViewRenderer : ViewRenderer<SkiaView, SKCanvasView>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<SkiaView> e)
         {
@@ -17,17 +18,14 @@ namespace SkiaForms.Gtk2
             {
                 if (this.Control == null)
                 {
-                    var control = new SkiaWidget();
+                    var control = new SKCanvasView();
                     control.PaintSurface += this.OnPaintSurface;
                     this.SetNativeControl(control);
                 }
 
-                e.NewElement.SizeChanged += (s, a) => this.SetSize();
-                this.SetSize();
-
                 e.NewElement.Invalidated += this.OnInvalidated;
             }
-            else if (e.OldElement != null)
+            else if(e.OldElement != null)
             {
                 e.OldElement.Invalidated -= this.OnInvalidated;
                 if (this.Control != null)
@@ -42,18 +40,9 @@ namespace SkiaForms.Gtk2
             this.Element.OnPaintSurface?.Invoke(e.Surface, e.Info);
         }
 
-        private void OnInvalidated(object sender, System.EventArgs e)
+        private void OnInvalidated(object sender, EventArgs e)
         {
-            this.Control?.QueueDraw();
-        }
-
-        private void SetSize()
-        {
-            if (this.Control != null)
-            {
-                this.Control.HeightRequest = (int)this.Element.Height;
-                this.Control.WidthRequest = (int)this.Element.Width;
-            }
+            this.Control?.SetNeedsDisplay();
         }
     }
 }

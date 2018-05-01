@@ -10,24 +10,33 @@ namespace SkiaForms.UWP
     {
         protected override void OnElementChanged(ElementChangedEventArgs<SkiaView> e)
         {
-            if (e.NewElement != null && this.Control == null)
+            if (e.NewElement != null)
             {
-                var control = new SKXamlCanvas();
-
-                control.PaintSurface += (s, a) =>
+                if (this.Control == null)
                 {
-                    this.Element.OnPaintSurface?.Invoke(a.Surface, a.Info);
-                };
+                    var control = new SKXamlCanvas();
+                    control.PaintSurface += this.OnPaintSurface;
+                    this.SetNativeControl(control);
+                }
 
-                this.SetNativeControl(control);
-
-                this.Element.SizeChanged += (s, a) => this.SetSize();
+                e.NewElement.SizeChanged += (s, a) => this.SetSize();
                 this.SetSize();
 
-                control.Invalidate();
-
-                this.Element.Invalidated += this.OnInvalidated;
+                e.NewElement.Invalidated += this.OnInvalidated;
             }
+            else if (e.OldElement != null)
+            {
+                e.OldElement.Invalidated -= this.OnInvalidated;
+                if (this.Control != null)
+                {
+                    this.Control.PaintSurface -= this.OnPaintSurface;
+                }
+            }
+        }
+
+        private void OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
+        {
+            this.Element.OnPaintSurface?.Invoke(e.Surface, e.Info);
         }
 
         private void OnInvalidated(object sender, System.EventArgs e)
