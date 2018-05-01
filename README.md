@@ -3,15 +3,20 @@ Lightweight SkiaSharp renderers for Xamarin.Forms
 
 ## Renderers
 The following renderers are currently available:
-* UWP
+* Android
 * GTK (Windows and Linux tested; macOS not tested)
 * iOS
 * macOS
-* Android
+* UWP
 
 ## Install
-To install this library, you can use the following nuget package:
-[coming soon](https://www.nuget.org/)
+To install this library, you can use the following nuget packages:
+* [Shared](https://www.nuget.org/packages/SkiaForms/)
+* [Android](https://www.nuget.org/packages/SkiaForms.Droid/)
+* [GTK](https://www.nuget.org/packages/SkiaForms.Gtk2/)
+* [iOS](https://www.nuget.org/packages/SkiaForms.iOS/)
+* [macOS](https://www.nuget.org/packages/SkiaForms.macOS/)
+* [UWP](https://www.nuget.org/packages/SkiaForms.UWP/)
 
 ### Linux
 To run SkiaSharp (v1.60.0) on a Mono application on Debian, the following dependencies have to be installed besides mono:
