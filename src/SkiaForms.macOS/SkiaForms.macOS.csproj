@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\build\netstandard2.0\Xamarin.Forms.props')" />
+  <Import Project="..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,14 +28,18 @@
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>false</UseSGen>
-    <HttpClientHandler></HttpClientHandler>
-    <LinkMode></LinkMode>
-    <XamMacArch></XamMacArch>
+    <HttpClientHandler>
+    </HttpClientHandler>
+    <LinkMode>
+    </LinkMode>
+    <XamMacArch>
+    </XamMacArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
@@ -41,38 +47,35 @@
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>false</UseSGen>
-    <HttpClientHandler></HttpClientHandler>
-    <LinkMode></LinkMode>
-    <XamMacArch></XamMacArch>
+    <HttpClientHandler>
+    </HttpClientHandler>
+    <LinkMode>
+    </LinkMode>
+    <XamMacArch>
+    </XamMacArch>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SkiaSharp, Version=1.60.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\samples\packages\SkiaSharp.1.60.2\lib\Xamarin.Mac20\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Mac, Version=1.60.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\samples\packages\SkiaSharp.Views.1.60.2\lib\Xamarin.Mac20\SkiaSharp.Views.Mac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\samples\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.Mac\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\samples\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.Mac\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.macOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\samples\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.Mac\Xamarin.Forms.Platform.macOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\samples\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.Mac\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Mac" />
-    <Reference Include="Xamarin.Forms.Core.Design">
-      <HintPath>..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\lib\Xamarin.Mac\Design\Xamarin.Forms.Core.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml.Design">
-      <HintPath>..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\lib\Xamarin.Mac\Design\Xamarin.Forms.Xaml.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\lib\Xamarin.Mac\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\lib\Xamarin.Mac\Xamarin.Forms.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform.macOS">
-      <HintPath>..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\lib\Xamarin.Mac\Xamarin.Forms.Platform.macOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\lib\Xamarin.Mac\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="SkiaSharp">
-      <HintPath>..\..\samples\packages\SkiaSharp.1.60.0\lib\XamarinMac\SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="SkiaSharp.Views.Mac">
-      <HintPath>..\..\samples\packages\SkiaSharp.Views.1.60.0\lib\XamarinMac\SkiaSharp.Views.Mac.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SkiaViewRenderer.cs" />
@@ -89,5 +92,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
-  <Import Project="..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\samples\packages\Xamarin.Forms.3.0.0.427558-pre4\build\netstandard2.0\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\samples\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" />
 </Project>

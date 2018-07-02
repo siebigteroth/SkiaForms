@@ -1,5 +1,6 @@
 ﻿using SkiaForms;
 using SkiaSharp.Views.Desktop;
+using SkiaSharp.Views.Gtk;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.GTK;
 
@@ -7,7 +8,7 @@ using Xamarin.Forms.Platform.GTK;
 
 namespace SkiaForms.Gtk2
 {
-    public class SkiaViewRenderer : ViewRenderer<SkiaView, SkiaWidget>
+    public class SkiaViewRenderer : ViewRenderer<SkiaView, SKWidget>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<SkiaView> e)
         {
@@ -17,7 +18,7 @@ namespace SkiaForms.Gtk2
             {
                 if (this.Control == null)
                 {
-                    var control = new SkiaWidget();
+                    var control = new SKWidget();
                     control.PaintSurface += this.OnPaintSurface;
                     this.SetNativeControl(control);
                 }

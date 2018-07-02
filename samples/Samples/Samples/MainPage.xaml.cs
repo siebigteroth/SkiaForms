@@ -16,6 +16,7 @@ namespace Samples
 			InitializeComponent();
 
             this.DrawCircle();
+            this.DrawSvg();
 		}
 
         private void DrawCircle()
@@ -42,6 +43,31 @@ namespace Samples
                 };
 
                 canvas.DrawCircle(centerX, centerY, 20, fill);
+            };
+
+            this.layout.Children.Add(skiaView);
+        }
+
+        private void DrawSvg()
+        {
+            var skiaView = new SkiaView()
+            {
+                WidthRequest = 125,
+                HeightRequest = 125
+            };
+
+            skiaView.OnPaintSurface = (surface, imageInfo) =>
+            {
+                using (var s = this.GetType().Assembly.GetManifestResourceStream("Samples.star.svg"))
+                {
+                    var svg = new SkiaSharp.Extended.Svg.SKSvg();
+                    svg.Load(s);
+
+                    var sx = Convert.ToSingle(skiaView.WidthRequest / svg.CanvasSize.Width);
+                    var sy = Convert.ToSingle(skiaView.HeightRequest / svg.CanvasSize.Height);
+                    var matrix = SKMatrix.MakeScale(sx, sy);
+                    surface.Canvas.DrawPicture(svg.Picture, ref matrix);
+                }
             };
 
             this.layout.Children.Add(skiaView);

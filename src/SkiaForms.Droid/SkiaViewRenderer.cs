@@ -5,15 +5,20 @@ using System.Text;
 using Android.Content;
 using SkiaForms;
 using SkiaSharp.Views.Android;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+
+[assembly: ExportRenderer(typeof(SkiaView), typeof(SkiaForms.Droid.SkiaViewRenderer))]
 
 namespace SkiaForms.Droid
 {
     public class SkiaViewRenderer : ViewRenderer<SkiaView, SKCanvasView>
     {
-        protected SkiaViewRenderer(Context context) : base(context)
+        public SkiaViewRenderer(Context context) : base(context)
         {
         }
+
+        public SkiaViewRenderer() { }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SkiaView> e)
         {
