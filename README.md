@@ -1,5 +1,5 @@
 # SkiaForms
-Lightweight SkiaSharp renderers for Xamarin.Forms
+Lightweight [SkiaSharp](https://github.com/mono/SkiaSharp/) renderers for Xamarin.Forms
 
 ## Renderers
 The following renderers are currently available:
@@ -19,11 +19,11 @@ To install this library, you can use the following nuget packages:
 * [UWP](https://www.nuget.org/packages/SkiaForms.UWP/)
 
 ### Linux
-To run SkiaSharp (v1.60.0) on a Mono application on Debian, the following dependencies have to be installed besides mono:
+To run [SkiaSharp](https://github.com/mono/SkiaSharp/) (v1.60.2) on a Mono application on Debian, the following dependencies have to be installed besides mono:
 ```
 sudo apt-get install gtk-sharp2
 
-wget https://github.com/mono/SkiaSharp/releases/download/v1.60.0/libSkiaSharp.so
+wget https://github.com/mono/SkiaSharp/releases/download/v1.60.2/libSkiaSharp.so
 sudo mkdir /usr/lib/cli/skiasharp
 sudo cp ./libSkiaSharp.so /usr/lib/cli/skiasharp/
 
